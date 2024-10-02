@@ -1,0 +1,57 @@
+|ej2
+CLK => ffjk:FF0.CLK
+CLK => ffjk:FF1.CLK
+CLK => ffjk:FF2.CLK
+CLR => ffjk:FF0.CLR
+CLR => ffjk:FF1.CLR
+CLR => ffjk:FF2.CLR
+Contador[0] << ffjk:FF0.Q
+Contador[1] << ffjk:FF1.Q
+Contador[2] << ffjk:FF2.Q
+
+
+|ej2|ffjk:FF0
+CLK => Qaux.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+CLR => Qaux.ACLR
+
+
+|ej2|ffjk:FF1
+CLK => Qaux.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+CLR => Qaux.ACLR
+
+
+|ej2|ffjk:FF2
+CLK => Qaux.CLK
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+J => process_0.IN0
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+K => process_0.IN1
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+CLR => Qaux.ACLR
+
+

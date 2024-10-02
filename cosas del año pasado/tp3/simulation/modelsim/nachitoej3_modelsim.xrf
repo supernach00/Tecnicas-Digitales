@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp3/nachitoej3.vhd
+source_file = 1, C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp3/Waveform.vwf
+source_file = 1, C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp3/db/nachitoej3.cbx.xml
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, d:/altera/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = nachitoej3
+instance = comp, \DataOut~output\, DataOut~output, nachitoej3, 1
+instance = comp, \CLK~input\, CLK~input, nachitoej3, 1
+instance = comp, \CLK~inputclkctrl\, CLK~inputclkctrl, nachitoej3, 1
+instance = comp, \DataIn~input\, DataIn~input, nachitoej3, 1
+instance = comp, \Q~feeder\, Q~feeder, nachitoej3, 1
+instance = comp, \DataOut~0\, DataOut~0, nachitoej3, 1
+instance = comp, \DataOut~reg0\, DataOut~reg0, nachitoej3, 1

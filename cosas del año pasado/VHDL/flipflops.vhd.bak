@@ -1,0 +1,22 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity flipflops is 
+	port 
+	{
+		-- entradas
+		D : in std_logic;
+		CLK : in std_logic;
+		
+		-- salidas 
+		Q : out std_logic;
+	}
+end flipflops;
+
+architecture Arq of flipflops is
+
+begin
+
+Q <= D when rising_edge(CLK);
+
+end Arq;	

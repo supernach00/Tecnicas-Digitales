@@ -1,0 +1,8 @@
+|nachitoej3
+DataIn => DataOut.IN1
+DataIn => Q.DATAIN
+CLK => DataOut~reg0.CLK
+CLK => Q.CLK
+DataOut <= DataOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

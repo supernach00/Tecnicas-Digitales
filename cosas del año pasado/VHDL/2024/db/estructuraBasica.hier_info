@@ -1,0 +1,9 @@
+|ej2tp2a
+H => T.IN0
+K => T.IN1
+K => T.IN0
+L => T.IN1
+L => T.IN1
+T <= T.DB_MAX_OUTPUT_PORT_TYPE
+
+

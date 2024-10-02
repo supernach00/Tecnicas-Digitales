@@ -1,0 +1,72 @@
+# Reading D:/Altera/modelsim_ase/tcl/vsim/pref.tcl 
+# do ej2_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\Altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\Altera\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/ffjk.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ffjk
+# -- Compiling architecture arch1 of ffjk
+# vcom -93 -work work {C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/ej2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ej2
+# -- Compiling architecture arch1 of ej2
+# ** Error: C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/ej2.vhd(59): (vcom-1436) Actual expression (infix expression) of formal "J" is not globally static.
+# 
+# ** Error: C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/ej2.vhd(60): (vcom-1436) Actual expression (infix expression) of formal "K" is not globally static.
+# 
+# ** Error: C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/ej2.vhd(67): VHDL Compiler exiting
+# ** Error: D:/Altera/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./ej2_run_msim_rtl_vhdl.do line 9
+# D:/Altera/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/ej2.vhd}"
+vsim work.ej2
+# vsim work.ej2 
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/simulation/modelsim/rtl_work.ej2' has no architecture.
+# 
+# Error loading design
+vsim work.ej2
+# vsim work.ej2 
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/simulation/modelsim/rtl_work.ej2' has no architecture.
+# 
+# Error loading design
+vsim work.ej2
+# vsim work.ej2 
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/simulation/modelsim/rtl_work.ej2' has no architecture.
+# 
+# Error loading design
+vsim work.ej2
+# vsim work.ej2 
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/simulation/modelsim/rtl_work.ej2' has no architecture.
+# 
+# Error loading design
+vsim work.ej2
+# vsim work.ej2 
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/simulation/modelsim/rtl_work.ej2' has no architecture.
+# 
+# Error loading design
+vsim work.ej2
+# vsim work.ej2 
+# Loading std.standard
+# ** Error: (vsim-3173) Entity 'C:/Users/nacho/OneDrive/Escritorio/tecnicas digitais/tp4/simulation/modelsim/rtl_work.ej2' has no architecture.
+# 
+# Error loading design

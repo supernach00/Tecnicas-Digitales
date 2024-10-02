@@ -1,0 +1,35 @@
+--IMPLEMENTACION DE UN FLIP-FLOP TIPO 'D'
+
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+
+ENTITY FFtipoD IS
+	PORT(
+	
+		D : IN std_logic;
+		CLK : IN std_logic;
+		PRE : IN std_logic;
+		RST : IN std_logic;
+		
+		Q : OUT std_logic;
+		NQ : OUT std_logic
+	
+	);
+
+END FFtipoD;
+
+ARCHITECTURE arch1 OF FFtipoD IS
+
+SIGNAL Qaux : std_logic;
+
+BEGIN
+
+	 Qaux <= '0' WHEN (RST = '1') ELSE
+		      '1' WHEN (PRE = '1') ELSE
+		       D WHEN 	rising_edge(CLK);
+				 
+	 Q <= Qaux;
+	 NQ <= NOT(Qaux);
+	 
+
+END ARCHITECTURE;

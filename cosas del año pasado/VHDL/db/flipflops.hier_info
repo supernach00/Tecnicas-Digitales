@@ -1,0 +1,12 @@
+|nacho
+A => J.OUTPUTSELECT
+A => J.OUTPUTSELECT
+A => K.DATAA
+B => J.DATAB
+CLK => Qn.CLK
+CLK => Qaux.CLK
+CLK => K.CLK
+CLK => J.CLK
+Q <= Qaux.DB_MAX_OUTPUT_PORT_TYPE
+
+
