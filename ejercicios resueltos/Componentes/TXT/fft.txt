@@ -1,0 +1,38 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fft is
+	port(
+		T : in std_logic;
+		CLK : in std_logic;
+		CLR : in std_logic;
+		Q : out std_logic;
+		Qnot : out std_logic
+	);
+end fft;
+
+architecture arch1 of fft is
+
+signal Qaux : std_logic;
+
+begin	
+	process(T, CLR, CLK, Qaux)
+		begin 
+		if (CLR = '1') then
+			Qaux <= '0';
+		elsif rising_edge(CLK) then
+			if (T = '0') then
+				Qaux <= Qaux;
+			elsif (T = '1') then
+				Qaux <= NOT(Qaux);
+			end if;
+		end if;
+	end process;
+
+	Q <= Qaux;
+	Qnot <= NOT(Qaux);
+
+end arch1;
+	
+
+	
