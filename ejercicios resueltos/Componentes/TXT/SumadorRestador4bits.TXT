@@ -1,0 +1,95 @@
+-- sumador restador 4 bits
+--requiere: fullAdder
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity SumadorRestador4bits is
+	port(
+	
+	controlYcarry_in : in std_logic; -- esta entrada es la que controla si suma y resta, y ademas coincide con lo que debe valer el carry de entrada (la suma para convertir ca1 a ca2)
+	AAAA, BBBB : in std_logic_vector(3 downto 0);
+	salida5bits : out std_logic_vector(4 downto 0) -- es de un bit mas ya que en la suma el carry puede agregarlo. en el restador se ignora.
+	);
+
+end SumadorRestador4bits;
+
+architecture arch1 of SumadorRestador4bits is
+
+signal salida5bitsAUX : std_logic_vector(4 downto 0);
+signal BBBBaux : std_logic_vector(3 downto 0); -- senial B de cuatro bits, tenog que poner una aux porque para restar necesito negar la original. lo hago en el process del final.
+signal co0, co1, co2, co3 : std_logic; -- seniales aux para los carrys de salida de cada full adder.
+
+component fullAdder is
+	port(
+		
+			carry_in, A, B : in std_logic;
+			suma, carry_out : out std_logic
+		
+		);
+end component;
+
+begin
+
+FA0 : fullAdder
+	port map(
+
+		carry_in => controlYcarry_in,
+		A => AAAA(0),
+		B => BBBBaux(0),
+		suma => salida5bitsAUX(0),
+		carry_out => co0
+	
+	);
+	
+FA1 : fullAdder
+	port map(
+
+		carry_in => co0,
+		A => AAAA(1),
+		B => BBBBaux(1),
+		suma => salida5bitsAUX(1),
+		carry_out => co1
+	
+	);
+
+FA2 : fullAdder
+	port map(
+
+		carry_in => co1,
+		A => AAAA(2),
+		B => BBBBaux(2),
+		suma => salida5bitsAUX(2),
+		carry_out => co2
+	
+	);
+
+FA3 : fullAdder
+	port map(
+
+		carry_in => co2,
+		A => AAAA(3),
+		B => BBBBaux(3),
+		suma => salida5bitsAUX(3),
+		carry_out => salida5bitsAUX(4)
+	
+	);	
+
+process(BBBB, BBBBaux, controlYcarry_in, salida5bitsAUX)
+	begin
+	
+		if (controlYcarry_in = '1') then --caso restador
+		
+			BBBBaux <= NOT(BBBB);
+			salida5bits <= '0' & salida5bitsAUX(3 downto 0);
+			
+		elsif (controlYcarry_in = '0') then -- caso sumador
+		
+			BBBBaux <= BBBB;
+			salida5bitS <= salida5bitsAUX;
+			
+		end if;
+			
+	end process;	
+	
+end architecture;

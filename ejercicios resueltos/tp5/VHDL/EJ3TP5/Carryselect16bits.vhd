@@ -1,0 +1,88 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity sumadorCarrySelect16bits is 
+
+	port(
+	
+		carry_in : in std_logic;
+		AAAAAAAAAAAAAAAA, BBBBBBBBBBBBBBBB : in std_logic_vector(15 downto 0);
+		salida17bits : out std_logic_vector(16 downto 0); -- salida de la suma con el carry de salida incluido.
+		salida16bits : out std_logic_vector(15 downto 0); --salida de la suma sin el carry de salida.
+		carry_out : out std_logic
+	
+	);
+	
+end entity;	
+	
+architecture arch1 of sumadorCarrySelect16bits is
+
+component sumador8bits is
+	port(
+	
+		carry_in : in std_logic;
+		AAAAAAAA, BBBBBBBB : in std_logic_vector(7 downto 0);
+		SUMA : out std_logic_vector(8 downto 0);
+		carry_out : out std_logic;
+		salida8bits : out std_logic_vector(7 downto 0)
+);
+
+end component;
+
+signal salidaAux1, salidaAux2, salidaAux3 : std_logic_vector(6 downto 0);
+signal carry_out1, carry_out2, carry_out3 : std_logic;
+
+begin
+
+	sum1 : sumador8bits
+		port map(
+		
+			carry_in => carry_in,
+			AAAAAAAA => AAAAAAAAAAAAAAAA(7 downto 0),
+			BBBBBBBB => BBBBBBBBBBBBBBBB(7 downto 0),
+			SUMA => open,
+			carry_out => carry_out1,
+			salida8bits => salidaAux1
+			
+		);
+		
+	sum2 : sumador8bits
+		port map(
+		
+			carry_in => '1',
+			AAAAAAAA => AAAAAAAAAAAAAAAA(15 downto 8),
+			BBBBBBBB => BBBBBBBBBBBBBBBB(15 downto 8),
+			SUMA => open,
+			carry_out => carry_out2,
+			salida8bits => salidaAux2
+			
+		);
+		
+	sum3 : sumador8bits
+		port map(
+		
+			carry_in => '0',
+			AAAAAAAA => AAAAAAAAAAAAAAAA(15 downto 8),
+			BBBBBBBB => BBBBBBBBBBBBBBBB(15 downto 8),
+			SUMA => open,
+			carry_out => carry_out3,
+			salida8bits => salidaAux3
+			
+		);
+--esto capaz deberia haberlo hecho con muxs componentes pero va a andar bien igual:
+
+process(carry_out1, carry_out2, carry_out3, salidaAux1, salidaAux2, salidaAux3)
+begin
+
+	if (carry_out1 = '1') then
+		salida17bits <= carry_out2 & salidaAux2 & salidaAux1;
+		salida16bits <= salidaAux2 & salidaAux1;
+		carry_out <= carry_out2;
+	elsif (carry_out1 = '0') then
+		salida17bits <= carry_out3 & salidaAux3 & salidaAux1;
+		salida16bits <= salidaAux2 & salidaAux1;
+		carry_out <= carry_out3;
+	end if;
+end process;
+
+end architecture;
