@@ -1,0 +1,16 @@
+--------------------------PRIMERA FECHA SEGUNDO PARCIAL ISLyD 2019------------------------------------------
+* Un ADC flash de 4 bits tiene_________________comparadores analogicos.
+
+*La cyclon IV posee en csa LE, una tabla de look-up (__);un FF tipo JK (__);
+
+*La MAX II es una FPGA que tienen memoria de tipo RAM(__); FLASH (__);
+
+*La disipacion dinamica de potencia de un CMOS es lineal con _______ y cuadratica con ________.
+
+*El problema de conectar TTL a la salida de CMOS serie 4000 es________________________________.
+
+*En los bloques I/O de la Cycl IV, sepuee : registrar las entradas/salidas (__); obtener salida a Open-drain (__).
+
+*"in system programability " significa: _________________________________________________________________________.
+
+* En un ADC simple rampa el parametro que origina error en R,C,Vref,Tclk es:_____________________________________.
